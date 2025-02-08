@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "amplify-angular-template": {
+    "barberty": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/amplify-angular-template",
+            "outputPath": "dist/barberty",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "amplify-angular-template:build:production"
+              "buildTarget": "barberty:build:production"
             },
             "development": {
-              "buildTarget": "amplify-angular-template:build:development"
+              "buildTarget": "barberty:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "amplify-angular-template:build"
+            "buildTarget": "barberty:build"
           }
         },
         "test": {
