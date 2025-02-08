@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-samnote-dev-29b04-authRole",
+      "UnauthRoleArn": "arn:aws:iam::619071329577:role/amplify-samnote-dev-29b04-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::619071329577:role/amplify-samnote-dev-29b04-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-samnote-dev-29b04-deployment",
+      "UnauthRoleName": "amplify-samnote-dev-29b04-unauthRole",
+      "StackName": "amplify-samnote-dev-29b04",
+      "StackId": "arn:aws:cloudformation:us-east-2:619071329577:stack/amplify-samnote-dev-29b04/1b3a1e50-e65f-11ef-bf43-027ba725f5e3",
+      "AmplifyAppId": "d2bou0bvs79bya"
+    }
+  }
+}

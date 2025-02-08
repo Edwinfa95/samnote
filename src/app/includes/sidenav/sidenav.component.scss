@@ -1,0 +1,17 @@
+:host {
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        mat-list-item {
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+            ::ng-deep {
+                span {
+                    color: white;
+                }
+            }
+        }
+    }
+}

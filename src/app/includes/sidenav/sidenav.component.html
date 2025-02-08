@@ -1,0 +1,24 @@
+@if(isMobile){
+    <div class="float-end">
+        <button mat-button (click)="sidenav.toggle()">
+            <mat-icon class="m-0">close</mat-icon>
+        </button>
+    </div>
+}
+<div class="pt-3">
+    <mat-list class="p-0" role="list">
+        <div class="px-3" *ngFor="let item of menu">
+            <h3 class="border-bottom pb-2">{{ item.name }}</h3>
+            <mat-list>
+                <a *ngFor="let link of item.links" routerLink="{{ link.path }}" routerLinkActive="router-link-active" >
+                    <mat-list-item role="listitem">
+                        <div class="d-flex align-items-center">
+                            <mat-icon class="me-2">{{ link.icon }}</mat-icon>
+                            {{ link.name }}
+                        </div>
+                    </mat-list-item>
+                </a>
+            </mat-list>
+        </div>
+    </mat-list>
+</div>

@@ -1,1 +1,5 @@
-<h1>Funciona...</h1>
+<amplify-authenticator>
+    <ng-template amplifySlot="authenticated" let-user="user" let-signOut="signOut">
+        <router-outlet></router-outlet>
+    </ng-template>
+</amplify-authenticator>

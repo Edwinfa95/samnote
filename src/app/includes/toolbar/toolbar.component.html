@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <div class="d-flex justify-content-between algin-items-center w-100">
+        <div class="d-flex align-items-center">
+            @if(isMobile){
+                <button mat-icon-button (click)="toggleNav()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            }
+            <div class="logo d-flex align-items-center">
+                <img class="me-2" src="/img/logo-top.png" width="40" />
+                <span>samnote</span>
+            </div>
+        </div>
+        <div>
+            <span class="example-spacer"></span>
+            <button mat-icon-button>
+                <mat-icon>share</mat-icon>
+            </button>
+            <button mat-icon-button (click)="signOut()">
+                <mat-icon>logout</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-toolbar>
