@@ -6,6 +6,6 @@ export const ServiceModel = {
         description: a.string(),
         category: a.string(),
         price: a.float(),
-        barberShop: a.belongsTo('BarberShop','BarberShopId'),
+        barberShop: a.belongsTo('BarberShop','barber_shop_id'),
     }).authorization((allow) => [allow.publicApiKey()])
 }
