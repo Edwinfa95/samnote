@@ -1,7 +1,7 @@
 import { a } from '@aws-amplify/backend';
 
 export const BarberShopModel = {
-    BasicData: a.model({
+    BarberShop: a.model({
         name: a.string(),
         address: a.string(),
         user_id: a.id(),
