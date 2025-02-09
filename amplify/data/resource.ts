@@ -13,10 +13,10 @@ specifies that any user authenticated via an API key can "create", "read",
 =========================================================================*/
 const schema = a.schema({
   ...BasicDataModel,
-  ...BarberShopModel,
   ...EmployeeModel,
   ...ServiceModel,
-  ...ProductModel
+  ...ProductModel,
+  ...BarberShopModel
 });
 
 export type Schema = ClientSchema<typeof schema>;
