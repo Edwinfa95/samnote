@@ -14,6 +14,8 @@ specifies that any user authenticated via an API key can "create", "read",
 const schema = a.schema({
   ...BasicDataModel,
   ...EmployeeModel,
+  ...ServiceModel,
+  ...ProductModel,
   ...BarberShopModel
 });
 
