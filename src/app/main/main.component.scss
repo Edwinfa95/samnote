@@ -1,0 +1,10 @@
+:host {
+    mat-sidenav {
+        background-color: #1b16460a;
+    }
+}
+::ng-deep {
+    body {
+        display: block !important;
+    }
+}

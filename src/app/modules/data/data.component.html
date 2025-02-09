@@ -1,1 +1,57 @@
-<p>data works!</p>
+<div class="content m-4">
+    <div class="border-bottom mb-2">
+        <h2>Información Básica</h2>
+    </div>
+    <div class="d-flex justify-content-center">
+        <form class="mt-4" [formGroup]="basicDataForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput formControlName="name" required />
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Apellido</mat-label>
+                        <input matInput formControlName="lastName" required />
+                    </mat-form-field>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Teléfono</mat-label>
+                        <input matInput formControlName="phoneNumber" required />
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Celular</mat-label>
+                        <input matInput formControlName="cellphoneNumber" required />
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Tipo de Documento</mat-label>
+                        <input matInput formControlName="documentType" required />
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Número de Documento</mat-label>
+                        <input matInput formControlName="documentNumber" required />
+                    </mat-form-field>
+                </div>
+            </div>
+            
+            <button mat-raised-button color="primary" type="submit" [disabled]="basicDataForm.invalid">
+                Guardar
+            </button>
+        </form>
+    </div>
+</div>

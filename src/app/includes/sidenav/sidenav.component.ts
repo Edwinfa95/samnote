@@ -28,8 +28,8 @@ export class SidenavComponent {
       name: 'samnote',
       links: [
         { path: 'data', name: 'Datos básicos', icon: 'fact_check' },
-        { path: 'shops', name: 'Puntos', icon: 'ecommerce' },
-        { path: 'reports', name: 'Reportes', icon: 'chart' }
+        { path: 'shops', name: 'Puntos', icon: 'store' },
+        { path: 'reports', name: 'Reportes', icon: 'pie_chart' }
       ]
     }
   ]
