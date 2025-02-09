@@ -7,6 +7,6 @@ export const EmployeeModel = {
         phone: a.string(),
         cellphone: a.string(),
         barberShopId: a.id(),
-        barberShop: a.belongsTo('BarberShop','barberShopId'),
+        barberShop: a.belongsTo('BarberShop','barberShopId')
     }).authorization((allow) => [allow.publicApiKey()])
 }
