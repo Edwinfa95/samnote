@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Amplify } from 'aws-amplify';
 import outputs from '../../amplify_outputs.json';
-import { AmplifyAuthenticatorModule, AuthenticatorService } from '@aws-amplify/ui-angular';
+import { AmplifyAuthenticatorModule, translations } from '@aws-amplify/ui-angular';
+import { I18n } from 'aws-amplify/utils';
+I18n.putVocabularies(translations);
+I18n.setLanguage('es');
 
 Amplify.configure(outputs);
 
