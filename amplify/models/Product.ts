@@ -1,7 +1,7 @@
 import { a } from '@aws-amplify/backend';
 
-export const ProductoModel = {
-    Producto: a.model({
+export const ProductModel = {
+    Product: a.model({
         name: a.string(),
         description: a.string(),
         category: a.string()

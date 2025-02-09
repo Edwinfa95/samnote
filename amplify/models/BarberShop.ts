@@ -4,8 +4,8 @@ export const BarberShopModel = {
     BarberShop: a.model({
         name: a.string(),
         address: a.string(),
-        user_id: a.id(),
-        employees: a.hasMany('Employee','EmployeeId'),
-        services: a.hasMany('Service','ServiceId')
+        phone: a.string(),
+        email: a.string(),
+        user_id: a.id()
     }).authorization((allow) => [allow.publicApiKey()])
 }

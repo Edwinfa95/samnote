@@ -3,6 +3,7 @@ import { BasicDataModel } from '../models/BasicData';
 import { BarberShopModel } from '../models/BarberShop';
 import { EmployeeModel } from '../models/Employee';
 import { ServiceModel } from '../models/Service';
+import { ProductModel } from '../models/Product';
 
 /*== STEP 1 ===============================================================
 The section below creates a Todo database table with a "content" field. Try
@@ -14,7 +15,8 @@ const schema = a.schema({
   ...BasicDataModel,
   ...BarberShopModel,
   ...EmployeeModel,
-  ...ServiceModel
+  ...ServiceModel,
+  ...ProductModel
 });
 
 export type Schema = ClientSchema<typeof schema>;
