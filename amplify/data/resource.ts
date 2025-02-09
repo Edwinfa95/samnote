@@ -1,5 +1,4 @@
 import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
-import { UserModel } from '../models/User';
 import { BasicDataModel } from '../models/BasicData';
 import { BarberShopModel } from '../models/BarberShop';
 import { EmployeeModel } from '../models/Employee';
@@ -12,7 +11,6 @@ specifies that any user authenticated via an API key can "create", "read",
 "update", and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  ...UserModel,
   ...BasicDataModel,
   ...BarberShopModel,
   ...EmployeeModel,

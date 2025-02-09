@@ -8,6 +8,6 @@ export const BasicDataModel = {
         lastName: a.string(),
         documentType: a.string(),
         documentNumber: a.string(),
-        user: a.belongsTo('User','UserId'),
-    }).authorization((allow) => [allow.publicApiKey()])
+        user_id: a.id()
+    }).authorization((allow) => [allow.publicApiKey(), allow.owner()])
 }

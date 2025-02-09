@@ -1,11 +1,11 @@
 import { a } from '@aws-amplify/backend';
 
 export const BarberShopModel = {
-    BarberShop: a.model({
+    BasicData: a.model({
         name: a.string(),
         address: a.string(),
-        user: a.belongsTo('User','UserId'),
+        user_id: a.id(),
         employees: a.hasMany('Employee','EmployeeId'),
-        services: a.hasMany('Service','ServiceId'),
+        services: a.hasMany('Service','ServiceId')
     }).authorization((allow) => [allow.publicApiKey()])
 }
