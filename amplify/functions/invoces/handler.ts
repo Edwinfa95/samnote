@@ -8,9 +8,9 @@ export const handler: APIGatewayProxyHandler = async (event) => {
         let response;
         switch (event.httpMethod) {
             case "GET":
-                response = { statusCode: 400, body: JSON.stringify({ message: "Método PUT permitido" }) };
+                response = { statusCode: 400, body: JSON.stringify({ message: "Método GET permitido" }) };
             case "POST":
-                response = { statusCode: 400, body: JSON.stringify({ message: "Método PUT permitido" }) };
+                response = { statusCode: 400, body: JSON.stringify({ message: "Método POST permitido" }) };
             case "PUT":
                 console.log('entra PUT');
                 response = { statusCode: 400, body: JSON.stringify({ message: "Método PUT permitido" }) };

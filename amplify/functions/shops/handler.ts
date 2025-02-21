@@ -11,7 +11,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
             case "GET":
                 response = await getShops(docClient);
             case "POST":
-                response = { statusCode: 400, body: JSON.stringify({ message: "Método PUT permitido" }) };
+                response = { statusCode: 400, body: JSON.stringify({ message: "Método POST permitido" }) };
             case "PUT":
                 console.log('entra PUT');
                 response = { statusCode: 400, body: JSON.stringify({ message: "Método PUT permitido" }) };
