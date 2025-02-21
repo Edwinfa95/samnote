@@ -7,6 +7,7 @@ export const CustomerModel = {
         phone: a.string(),
         cellphone: a.string(),
         barberShopId: a.id(),
-        barberShop: a.belongsTo('BarberShop','barberShopId')
+        barberShop: a.belongsTo('BarberShop','barberShopId'),
+        SalesInvoice: a.hasMany('SalesInvoice','customerId')
     }).authorization((allow) => [allow.publicApiKey()])
 }
