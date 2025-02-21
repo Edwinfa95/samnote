@@ -1,8 +1,7 @@
 import { ScanCommand } from "@aws-sdk/client-dynamodb";
 
-export const getShops = async (docClient:any) => {
+export const getShops = async (docClient:any, TableName:any) => {
     try {
-        let TableName = process.env.AMPLIFY_DATA_BarberShops_TABLE_NAME;
         const command = new ScanCommand({
             TableName
           });

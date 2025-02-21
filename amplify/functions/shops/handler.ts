@@ -1,31 +1,46 @@
 import { APIGatewayProxyHandler } from "aws-lambda";
 import { createConnection } from "../resources/dbConnection";
 import { getShops } from "./actions/getShops";
+import { createShop } from "./actions/createShop";
+import { deleteShop } from "./actions/deleteShop";
+import { updateShop } from "./actions/updateShop";
+
+const TableName = 'BarberShop-rswjb3xihzfgtgcdnh2l2kq5du-NONE';
 
 export const handler: APIGatewayProxyHandler = async (event) => {
     console.log("event-shops", event);
     
     try {
         let response;
+        const docClient = createConnection();
         switch (event.httpMethod) {
             case "GET":
                 try {
-                    const docClient = createConnection();
-                    response = await getShops(docClient);
+                    response = await getShops(docClient, TableName);
                 } catch (error) {
                     response = { statusCode: 500, body: JSON.stringify({ error }) };
                 }
                 break;
             case "POST":
-                response = { statusCode: 400, body: JSON.stringify({ message: "Método POST permitido" }) };
+                try {
+                    response = await createShop(event, docClient, TableName)
+                } catch (error) {
+                    response = { statusCode: 500, body: JSON.stringify({ error }) };
+                }
                 break;
             case "PUT":
-                console.log('entra PUT');
-                response = { statusCode: 400, body: JSON.stringify({ message: "Método PUT permitido" }) };
+                try {
+                    response = await updateShop(event, docClient, TableName)
+                } catch (error) {
+                    response = { statusCode: 500, body: JSON.stringify({ error }) };
+                }
                 break;
             case "DELETE":
-                console.log('entra DELETE');
-                response = { statusCode: 400, body: JSON.stringify({ message: "Método DELETE permitido" }) };
+                try {
+                    response = await deleteShop(event, docClient, TableName)
+                } catch (error) {
+                    response = { statusCode: 500, body: JSON.stringify({ error }) };
+                }
                 break;
             default:
                 console.log('entra sin metodo');
