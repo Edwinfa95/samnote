@@ -67,6 +67,7 @@ export const updateShop = async (event:any, docClient:any, TableName:string) => 
             }),
         };
     } catch (error) {
+        console.log('Error: ',error)
         return { statusCode: 500, body: JSON.stringify({ error }) };
     }
 }
