@@ -93,6 +93,10 @@ body {
   padding-right: var(--amplify-components-authenticator-form-padding);
 }
 
+[routerlink], [ng-reflect-router-link] {
+  cursor: pointer;
+}
+
 @import url(./brand_identity/main.scss);
 
 mat-sidenav-container {

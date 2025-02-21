@@ -1,9 +1,21 @@
 <div class="content m-4">
-    <div class="border-bottom mb-2">
+    <div class="border-bottom mb-2 d-flex align-items-center">
         <h2>Información Básica</h2>
+        @if(loading){
+            <div class="ms-3">
+                <mat-spinner diameter="20"></mat-spinner>
+            </div>
+        }
     </div>
+    @if(warnings){
+        <div class="text-center pt-3 pb-2">
+            <span class="badge bg-warning p-2 px-3 text-dark fw-medium">
+                {{ warnings }}
+            </span>
+        </div>
+    }
     <div class="d-flex justify-content-center">
-        <form class="mt-4" [formGroup]="basicDataForm" (ngSubmit)="onSubmit()">
+        <form class="mt-4 w-100" [formGroup]="basicDataForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <mat-form-field class="w-100" appearance="outline">
@@ -37,8 +49,12 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <mat-form-field class="w-100" appearance="outline">
-                        <mat-label>Tipo de Documento</mat-label>
-                        <input matInput formControlName="documentType" required />
+                        <mat-label>Tipo Documento</mat-label>
+                        <mat-select formControlName="documentType">
+                          @for (typeDoc of documentTypes; track typeDoc) {
+                            <mat-option [value]="typeDoc.id">{{typeDoc.label}}</mat-option>
+                          }
+                        </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="col-12 col-md-6">
@@ -49,9 +65,11 @@
                 </div>
             </div>
             
-            <button mat-raised-button color="primary" type="submit" [disabled]="basicDataForm.invalid">
-                Guardar
-            </button>
+            <div class="d-flex justify-content-center">
+                <button mat-raised-button color="primary" type="submit" [disabled]="basicDataForm.invalid">
+                    Guardar
+                </button>
+            </div>
         </form>
     </div>
 </div>

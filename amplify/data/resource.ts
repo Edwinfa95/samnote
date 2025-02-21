@@ -2,8 +2,11 @@ import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
 import { BasicDataModel } from '../models/BasicData';
 import { BarberShopModel } from '../models/BarberShop';
 import { EmployeeModel } from '../models/Employee';
-import { ServiceModel } from '../models/Service';
+import { ServiceModel } from '../models/Services';
 import { ProductModel } from '../models/Product';
+import { InvoiceItemModel } from '../models/InvoiceItem';
+import { SalesInvoicesModel } from '../models/SalesInvoice';
+import { CustomerModel } from '../models/Customer';
 
 /*== STEP 1 ===============================================================
 The section below creates a Todo database table with a "content" field. Try
@@ -16,7 +19,10 @@ const schema = a.schema({
   ...EmployeeModel,
   ...ServiceModel,
   ...ProductModel,
-  ...BarberShopModel
+  ...BarberShopModel,
+  ...InvoiceItemModel,
+  ...SalesInvoicesModel,
+  ...CustomerModel
 });
 
 export type Schema = ClientSchema<typeof schema>;

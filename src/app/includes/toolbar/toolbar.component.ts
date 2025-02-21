@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenav } from '@angular/material/sidenav'; 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 import { signOut } from 'aws-amplify/auth';
 
@@ -14,6 +15,7 @@ import { signOut } from 'aws-amplify/auth';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    RouterModule,
     AmplifyAuthenticatorModule
   ],
   templateUrl: './toolbar.component.html',

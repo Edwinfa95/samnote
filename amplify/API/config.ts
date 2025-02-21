@@ -26,6 +26,11 @@ export function configApi(backend: any) {
             path: 'invoice',
             lambda: backend.invocesApiFunction,
             policies: []
+        },
+        {
+            path: 'shops',
+            lambda: backend.shopsApiFunction,
+            policies: []
         }
     ];
 

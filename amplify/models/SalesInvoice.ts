@@ -1,7 +1,7 @@
 import { a } from '@aws-amplify/backend';
 
 export const SalesInvoicesModel = {
-    SalesInvoices: a.model({
+    SalesInvoice: a.model({
         invoiceNumber: a.string(), // Número de factura
         date: a.datetime(), // Fecha de emisión
         customerId: a.id(), // ID del cliente
