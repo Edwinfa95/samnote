@@ -19,7 +19,7 @@ export const getShops = async (event: any, docClient: any, TableName: any) => {
 
         return {
             statusCode: 200,
-            body: JSON.stringify(id? response : response.Items),
+            body: JSON.stringify(id? response.Item : response.Items),
         };
     } catch (error) {
         return {
