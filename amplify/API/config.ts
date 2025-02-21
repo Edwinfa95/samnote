@@ -39,7 +39,7 @@ export function configApi(backend: any) {
                         "dynamodb:DeleteItem"
                     ],
                     resources: [
-                        'arn:aws:dynamodb:us-east-2:619071329577:table/BarberShops'
+                        'arn:aws:dynamodb:us-east-2:619071329577:table/BarberShop-rswjb3xihzfgtgcdnh2l2kq5du-NONE'
                     ]
                 }
             ]
