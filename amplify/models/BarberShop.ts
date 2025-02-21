@@ -9,6 +9,7 @@ export const BarberShopModel = {
         user_id: a.string(),
         employees: a.hasMany('Employee', 'barberShopId'),
         services: a.hasMany('Service', 'barberShopId'),
-        products: a.hasMany('Product', 'barberShopId')
+        products: a.hasMany('Product', 'barberShopId'),
+        customers: a.hasMany('Customer', 'customerId'),
     }).authorization((allow) => [allow.publicApiKey()])
 }
