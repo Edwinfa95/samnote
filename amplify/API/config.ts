@@ -1,4 +1,4 @@
-import { Stack } from "aws-cdk-lib";
+import { Resource, Stack } from "aws-cdk-lib";
 import { AuthorizationType, Cors, LambdaIntegration, RestApi } from "aws-cdk-lib/aws-apigateway";
 import { PolicyStatement } from "aws-cdk-lib/aws-iam";
 
@@ -30,7 +30,19 @@ export function configApi(backend: any) {
         {
             path: 'shops',
             lambda: backend.shopsApiFunction,
-            policies: []
+            policies: [
+                {
+                    actions: [
+                        "dynamodb:Scan",
+                        "dynamodb:PutItem",
+                        "dynamodb:UpdateItem",
+                        "dynamodb:DeleteItem"
+                    ],
+                    resources: [
+                        'arn:aws:dynamodb:us-east-2:619071329577:table/BarberShops'
+                    ]
+                }
+            ]
         }
     ];
 
@@ -44,7 +56,7 @@ export function configApi(backend: any) {
         const lambdaIntegration = new LambdaIntegration(
             itemLambda.lambda.resources.lambda
         );
-        
+
         itemLambda.policies.forEach((policy:any) => {
             itemLambda.lambda.resources.lambda.addToRolePolicy(new PolicyStatement({
                 actions: policy.actions,
