@@ -2,8 +2,9 @@ import { ScanCommand } from "@aws-sdk/client-dynamodb";
 
 export const getShops = async (docClient:any) => {
     try {
+        let TableName = process.env.AMPLIFY_DATA_BarberShops_TABLE_NAME;
         const command = new ScanCommand({
-            TableName: "BarberShops", // Nombre de la tabla en DynamoDB
+            TableName
           });
         
         const response = await docClient.send(command);
