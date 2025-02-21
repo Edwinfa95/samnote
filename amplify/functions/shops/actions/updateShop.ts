@@ -4,8 +4,9 @@ export const updateShop = async (event:any, docClient:any, TableName:string) => 
     try {
         console.log('entro al metodo PUT')
         const body = JSON.parse(event.body || "{}");
+        const id = event.pathParameters?.proxy;
 
-        if (!body.id) {
+        if (!id) {
             return {
                 statusCode: 400,
                 body: JSON.stringify({ message: "El campo 'id' es obligatorio." }),
@@ -16,7 +17,7 @@ export const updateShop = async (event:any, docClient:any, TableName:string) => 
         const getCommand = new GetItemCommand({
             TableName,
             Key: {
-                id: { S: body.id },
+                id: { S: id },
             },
         });
 
