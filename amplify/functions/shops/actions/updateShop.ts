@@ -64,7 +64,7 @@ export const updateShop = async (event:any, docClient:any, TableName:string) => 
         const updateCommand = new UpdateItemCommand({
             TableName,
             Key: {
-                id: { S: body.id },
+                id: { S: id },
             },
             UpdateExpression: updateExpression,
             ExpressionAttributeValues: expressionAttributeValues,
