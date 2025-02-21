@@ -1,4 +1,5 @@
 import { PutItemCommand } from "@aws-sdk/client-dynamodb";
+import { randomUUID } from 'crypto';
 
 export const createShop = async (event:any, docClient:any, TableName:string) => {
     try {
@@ -6,7 +7,7 @@ export const createShop = async (event:any, docClient:any, TableName:string) => 
         const body = JSON.parse(event.body || "{}");
         console.log('body:',body);
 
-        const id = crypto.randomUUID();
+        const id = randomUUID();
 
         console.log('data',{
             id: { S: id },
@@ -28,6 +29,8 @@ export const createShop = async (event:any, docClient:any, TableName:string) => 
                 user_id:{ S: body.user_id }
             },
         });
+
+        console.log('crea comando',command)
 
         await docClient.send(command);
 
