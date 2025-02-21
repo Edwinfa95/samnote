@@ -15,8 +15,10 @@ export const handler: APIGatewayProxyHandler = async (event) => {
                 } catch (error) {
                     response = { statusCode: 500, body: JSON.stringify({ error }) };
                 }
+                break;
             case "POST":
                 response = { statusCode: 400, body: JSON.stringify({ message: "Método POST permitido" }) };
+                break;
             case "PUT":
                 console.log('entra PUT');
                 response = { statusCode: 400, body: JSON.stringify({ message: "Método PUT permitido" }) };
@@ -28,6 +30,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
             default:
                 console.log('entra sin metodo');
                 response = { statusCode: 400, body: JSON.stringify({ message: "Método no permitido" }) };
+                break;
         }
 
         return {
