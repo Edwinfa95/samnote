@@ -1,15 +1,20 @@
 import { APIGatewayProxyHandler } from "aws-lambda";
-import { docClient } from "../resources/dbConnection";
+import { createConnection } from "../resources/dbConnection";
 import { getShops } from "./actions/getShops";
 
 export const handler: APIGatewayProxyHandler = async (event) => {
-    console.log("event", event);
+    console.log("event-shops", event);
     
     try {
         let response;
         switch (event.httpMethod) {
             case "GET":
-                response = await getShops(docClient);
+                try {
+                    const docClient = createConnection();
+                    response = await getShops(docClient);
+                } catch (error) {
+                    response = { statusCode: 500, body: JSON.stringify({ error }) };
+                }
             case "POST":
                 response = { statusCode: 400, body: JSON.stringify({ message: "Método POST permitido" }) };
             case "PUT":

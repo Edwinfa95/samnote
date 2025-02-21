@@ -1,8 +1,7 @@
 import { APIGatewayProxyHandler } from "aws-lambda";
-import { docClient } from "../resources/dbConnection";
 
 export const handler: APIGatewayProxyHandler = async (event) => {
-    console.log("event", event);
+    console.log("event-invoice", event);
     
     try {
         let response;
