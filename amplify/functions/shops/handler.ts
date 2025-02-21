@@ -16,7 +16,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
         switch (event.httpMethod) {
             case "GET":
                 try {
-                    response = await getShops(docClient, TableName);
+                    response = await getShops(event,docClient, TableName);
                 } catch (error) {
                     response = { statusCode: 500, body: JSON.stringify({ error }) };
                 }

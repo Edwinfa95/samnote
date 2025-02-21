@@ -4,6 +4,7 @@ export const createShop = async (event:any, docClient:any, TableName:string) => 
     try {
         console.log('entro al metodo POST')
         const body = JSON.parse(event.body || "{}");
+        console.log('body:',body)
 
         const command = new PutItemCommand({
             TableName, // Nombre de la tabla
