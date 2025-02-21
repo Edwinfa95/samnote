@@ -2,6 +2,7 @@ import { GetItemCommand, UpdateItemCommand } from "@aws-sdk/client-dynamodb";
 
 export const updateShop = async (event:any, docClient:any, TableName:string) => {
     try {
+        console.log('entro al metodo PUT')
         const body = JSON.parse(event.body || "{}");
 
         if (!body.id) {

@@ -2,6 +2,7 @@ import { PutItemCommand } from "@aws-sdk/client-dynamodb";
 
 export const createShop = async (event:any, docClient:any, TableName:string) => {
     try {
+        console.log('entro al metodo POST')
         const body = JSON.parse(event.body || "{}");
 
         const command = new PutItemCommand({

@@ -2,6 +2,7 @@ import { DeleteItemCommand } from "@aws-sdk/client-dynamodb";
 
 export const deleteShop = async (event:any, docClient:any, TableName:string) => {
     try {
+        console.log('entro al metodo DELETE')
         const id = event.pathParameters?.proxy; // Obtener el ID desde la URL
 
         if (!id) {
