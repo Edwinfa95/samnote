@@ -23,6 +23,7 @@ export const createShop = async (event:any, docClient:any, TableName:string) => 
             body: JSON.stringify({ message: "Barbería creada" }),
         };
     } catch (error) {
+        console.log('Error',error)
         return {
             statusCode: 500,
             body: JSON.stringify({ error })
