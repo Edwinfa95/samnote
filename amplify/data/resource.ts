@@ -5,7 +5,7 @@ import { EmployeeModel } from '../models/Employee';
 import { ServiceModel } from '../models/Services';
 import { ProductModel } from '../models/Product';
 import { InvoiceItemModel } from '../models/InvoiceItem';
-import { SalesInvoicesModel } from '../models/SalesInvoice';
+import { SalesInvoiceModel } from '../models/SalesInvoice';
 import { CustomerModel } from '../models/Customer';
 
 /*== STEP 1 ===============================================================
@@ -21,7 +21,7 @@ const schema = a.schema({
   ...ProductModel,
   ...BarberShopModel,
   ...InvoiceItemModel,
-  ...SalesInvoicesModel,
+  ...SalesInvoiceModel,
   ...CustomerModel
 });
 
