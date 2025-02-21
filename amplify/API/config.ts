@@ -35,8 +35,9 @@ export function configApi(backend: any) {
                     actions: [
                         "dynamodb:Scan",
                         "dynamodb:PutItem",
+                        "dynamodb:GetItem",
                         "dynamodb:UpdateItem",
-                        "dynamodb:DeleteItem"
+                        "dynamodb:DeleteItem",
                     ],
                     resources: [
                         'arn:aws:dynamodb:us-east-2:619071329577:table/BarberShop-rswjb3xihzfgtgcdnh2l2kq5du-NONE'
