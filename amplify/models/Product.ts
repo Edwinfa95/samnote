@@ -6,6 +6,7 @@ export const ProductModel = {
         description: a.string(),
         category: a.string(),
         barberShopId: a.id(),
-        barberShop: a.belongsTo('BarberShop','barberShopId')
+        barberShop: a.belongsTo('BarberShop','barberShopId'),
+        invoiceItems: a.hasMany('InvoiceItem', 'productId')
     }).authorization((allow) => [allow.publicApiKey()])
 }
