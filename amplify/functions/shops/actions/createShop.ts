@@ -6,6 +6,7 @@ export const createShop = async (event:any, docClient:any, TableName:string) => 
         const body = JSON.parse(event.body || "{}");
 
         const id = randomUUID();
+        const timestamp = new Date().toISOString(); // Fecha en formato ISO 8601
 
         const command = new PutItemCommand({
             TableName, // Nombre de la tabla
@@ -15,7 +16,9 @@ export const createShop = async (event:any, docClient:any, TableName:string) => 
                 address:{ S: body.address },
                 phone:{ S: body.phone },
                 email:{ S: body.email },
-                user_id:{ S: body.user_id }
+                user_id:{ S: body.user_id },
+                createdAt: { S: timestamp },
+                updatedAt: { S: timestamp },
             },
         });
 

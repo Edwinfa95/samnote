@@ -34,7 +34,9 @@ export const updateShop = async (event:any, docClient:any, TableName:string) => 
         let expressionAttributeValues: any = {};
         let expressionAttributeNames: any = {};
 
-        let inputs = ['name','address', 'phone', 'email'];
+        let inputs = ['name','address', 'phone', 'email', 'updatedAt'];
+        
+        body['updatedAt'] = new Date().toISOString();
 
         for (const input of inputs) {
             if (body[input]) {
